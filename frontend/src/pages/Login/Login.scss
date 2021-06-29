@@ -1,0 +1,17 @@
+@import "../../assets/scss/utils";
+
+.login {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: color("white");
+    width: rem(400px);
+    margin-left: rem(200px);
+    margin-top: rem(100px);
+    padding: rem(30px);
+  }
+
+  &__message {
+    font-size: rem(12px);
+  }
+}
