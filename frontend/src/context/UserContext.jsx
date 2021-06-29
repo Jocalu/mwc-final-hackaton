@@ -28,8 +28,8 @@ const UserProvider = (props) => {
     }
 
     const login = async() => {
-        //si todo es OK, redirect a home
-        var url = '/url/api/login';
+        setError(false)
+        /*var url = '/url/api/login';
         var data = loginValues;
 
         fetch(url, {
@@ -40,11 +40,22 @@ const UserProvider = (props) => {
         }
         }).then(res => res.json())
         .catch(error => setError(true))
-        .then(response => setError(false));
+        .then(response => setError(false));*/
     }
     const register = () => {
-        //si todo es OK, redirect a home
-        
+        setError(false);
+        /*var url = '/url/api/register';
+        var data = registerValues;
+
+        fetch(url, {
+        method: 'POST', 
+        body: JSON.stringify(data), 
+        headers:{
+            'Content-Type': 'application/json'
+        }
+        }).then(res => res.json())
+        .catch(error => setError(true))
+        .then(response => setError(false));*/
     }
 
 	return(
@@ -55,6 +66,7 @@ const UserProvider = (props) => {
             registerValues,
 			setRegisterValues,
             validateForm,
+            validateRegisterForm,
             login,
             register
 		}}
