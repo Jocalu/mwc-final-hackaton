@@ -13,10 +13,7 @@ import { Link } from 'react-router-dom';
 
 function Login() {
   const [values, setValues] = useState({
-    amount: '',
     password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
   });
 

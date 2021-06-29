@@ -13,7 +13,6 @@ function Home() {
       
              <Link  to="/result">
           <Button 
-                   disabled
           variant="contained" 
           color="primary" 
           size="large">    
