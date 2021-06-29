@@ -24,12 +24,12 @@ function DragAndDrop() {
     return (
         <>
         {isDragActive ?
-        <div {...getRootProps()} className="dragAndDrop">
+        <div {...getRootProps()} className="dragAndDrop dragAndDrop--green">
         <input {...getInputProps()} onChange={handleChange}/>
              <p>Suelta aquí el archivo para calcular...</p>
         </div> 
         : 
-        <div {...getRootProps()} className=" dragAndDrop dragAndDrop--green">
+        <div {...getRootProps()} className="dragAndDrop ">
         <input {...getInputProps()} onChange={handleChange}/>
         
              <p>Arrastra aquí el archivo, o navega para seleccionarlo</p>

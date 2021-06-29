@@ -1,3 +1,5 @@
+@import "../../assets/scss/utils";
+
 .dragAndDrop {
   display: flex;
   flex-direction: column;
@@ -12,5 +14,6 @@
   &--green {
     border: 2px dashed color("green");
     background-color: color("green-light");
+    color: color("black");
   }
 }
