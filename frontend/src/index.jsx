@@ -9,23 +9,26 @@ import Login from './pages/Login/Login';
 import Result from './pages/Result/Result';
 import Home from './pages/Home/Home';
 import FilesProvider from './context/FilesContext'
+import UserProvider from './context/UserContext'
 
 ReactDOM.render(
 	<React.StrictMode>
-       <FilesProvider>
-		<Router>
-			<Switch>
-				<Route exact path="/">
-					<Login />
-				</Route>
-				<Route exact path="/result">
-					<Result />
-				</Route>
-				<Route exact path="/register"> <Register></Register></Route>
-				<Route exact path="/home"><Home></Home></Route>
-			</Switch>
-		</Router>
-    </FilesProvider>
+    <UserProvider>
+      <FilesProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Login />
+            </Route>
+            <Route exact path="/result">
+              <Result />
+            </Route>
+            <Route exact path="/register"><Register></Register></Route>
+            <Route exact path="/home"><Home></Home></Route>
+          </Switch>
+        </Router>
+      </FilesProvider>
+    </UserProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
