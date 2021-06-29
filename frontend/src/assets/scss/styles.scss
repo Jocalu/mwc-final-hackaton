@@ -1,8 +1,33 @@
+@import "./utils.scss";
+
 * {
   font-family: $font-primary;
   font-weight: 300px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: color("grey");
+  background-image: url(../../assets/img/tecnology4.jpg);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+  @include from-tablet {
+    overflow: hidden;
+  }
 }
 
 .shadow {
   box-shadow: 4px 2px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.br {
+  border-radius: rem(6px);
+}
+
+.text--grey {
+  color: color("grey");
 }
