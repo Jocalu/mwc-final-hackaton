@@ -1,4 +1,4 @@
-import './Login.scss';
+import './Register.scss';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -11,12 +11,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Register() {
   const [values, setValues] = useState({
-    amount: '',
     password: '',
-    weight: '',
-    weightRange: '',
     showPassword: false,
   });
 
@@ -35,7 +32,7 @@ function Login() {
   return (
     <main className="login">
       <div className="login__wrapper container">
-        <h1 className="mb-8">Login</h1>
+        <h1 className="mb-8">Register</h1>
 
         <TextField
           id="outlined-basic"
@@ -68,24 +65,15 @@ function Login() {
         </FormControl>
         <br />
         <br />
-        <Button variant="contained" color="primary" size="large">
-          ENTRAR
-        </Button>
+        <Link  to="/home">
+          <Button variant="contained" color="primary" size="large">    
+            REGISTRAR
+          </Button>
+        </Link>
 
-        <span className="login__message text--grey mt-4">
-          ¿No tienes cuenta?
-          <Link
-            className="ml-1"
-            style={{ textDecoration: 'none', color: '#0361b7' }}
-            to="/register"
-          >
-            Regístrate
-
-          </Link>
-        </span>
       </div>
     </main>
   );
 }
 
-export default Login;
+export default Register;

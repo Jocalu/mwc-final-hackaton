@@ -8,15 +8,19 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: color("grey");
-  background-image: url(../../assets/img/tecnology4.jpg);
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
+a {
+  text-decoration: none;
+  color: "inherit";
+  width: 100%;
+}
 
+body {
   @include from-tablet {
     overflow: hidden;
+    background-image: url(../../assets/img/tecnology4.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
   }
 }
 
@@ -35,4 +39,13 @@ body {
 
 .text--grey {
   color: color("grey");
+}
+
+.MuiButton-containedSizeLarge {
+  width: 100%;
+}
+
+.MuiButtonBase-root:disabled {
+  cursor: not-allowed;
+  pointer-events: auto;
 }
