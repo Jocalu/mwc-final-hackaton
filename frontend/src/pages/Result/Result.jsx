@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './Result.scss';
 import Score from '../../components/Score/Score';
 import mockPred from './../../data/predictions_test.json';
+import mockData from './../../data/computeECM.json';
 
 const options = {
 	chart: {
@@ -19,7 +20,7 @@ const options = {
 	},
 	xaxis: {
 		type: 'category',
-		categories: [" "],
+		categories: [' '],
 	},
 	yaxis: {
 		min: 0,
@@ -31,23 +32,23 @@ const options = {
 const dataMocked = [
 	{
 		name: 'Predicciones',
-		data: omitData(mockPred.data),
+		//data: omitData(mockData.predictedData),
+		data: mockData.predictedData,
 	},
 	{
 		name: 'Valores reales',
-		data: omitData(getData()),
+		//data: omitData(mockData.targetData),
+		data: mockData.targetData,
 	},
 ];
 
 function getData() {
-	return mockPred.data.map(el => el * Math.random())
+	return mockPred.data.map((el) => el * Math.random());
 }
 
 function omitData(data) {
-	return data.filter((el,i) => i%6 === 0)
+	return data.filter((el, i) => i % 6 === 0);
 }
-
-const resultMocked = 0.254;
 
 export default function Result() {
 	//const [data, result] = useContext(Context);
@@ -55,7 +56,7 @@ export default function Result() {
 
 	useEffect(() => {
 		setSeries(dataMocked);
-		getData()
+		getData();
 	}, []);
 
 	const displayGraph = () => {
@@ -66,7 +67,7 @@ export default function Result() {
 		<div className="result">
 			<div className="result__wrapper container">
 				<h1 className="title--center mb-6">Tus resultados</h1>
-				<Score result={resultMocked} />
+				<Score result={mockData.score.toString().slice(0,10)} />
 				{series && displayGraph()}
 
 				<Link to="/">
