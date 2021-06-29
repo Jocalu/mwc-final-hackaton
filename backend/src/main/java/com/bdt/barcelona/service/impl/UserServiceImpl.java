@@ -40,4 +40,16 @@ public class UserServiceImpl implements IUserService {
       return true;
     }).orElse(false);
   }
+
+  @Override
+  public Boolean login(User user) {
+    User userDB = userRepository.getUserByEmail(user.getEmail());
+    Boolean userIsCorrect = false;
+    if(userDB != null){
+      if(user.getPassword().equals(userDB.getPassword())){
+        userIsCorrect = true;
+      }
+    }
+    return userIsCorrect;
+  }
 }

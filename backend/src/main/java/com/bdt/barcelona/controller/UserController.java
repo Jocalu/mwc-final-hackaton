@@ -19,20 +19,12 @@ public class UserController {
     return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
   }
 
-  @GetMapping("/{id}")
-  @ResponseBody
-  public ResponseEntity<User> getUserById(@PathVariable("id") String userId){
-    return userService.getUserById(userId)
-      .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
-      .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-  }
-
-  @DeleteMapping("/{id}")
-  public ResponseEntity deleteUserById(@PathVariable("id") String userId){
-    if(userService.deleteUserById(userId)){
-      return new ResponseEntity(HttpStatus.OK);
+  @PostMapping("/login")
+  public ResponseEntity<User> login(@RequestBody User user){
+    if(userService.login(user)){
+      return new ResponseEntity<>(HttpStatus.OK);
     } else{
-      return new ResponseEntity(HttpStatus.NOT_FOUND);
+      return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
     }
   }
 
@@ -47,4 +39,22 @@ public class UserController {
       return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
   }
+
+  @GetMapping("/{id}")
+  public ResponseEntity<User> getUserById(@PathVariable("id") String userId){
+    return userService.getUserById(userId)
+      .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
+      .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+  }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> deleteUserById(@PathVariable("id") String userId){
+    if(userService.deleteUserById(userId)){
+
+      return new ResponseEntity<>(HttpStatus.OK);
+    } else{
+      return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    }
+  }
+
 }
