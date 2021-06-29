@@ -4,14 +4,22 @@ import './assets/scss/styles.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Login from './pages/Login/Login';
+import Result from './pages/Result/Result';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route exact path="/"><Login /></Route>
-      </Switch>
-    </Router>
-  </React.StrictMode>,
-  document.getElementById('root'),
+	<React.StrictMode>
+		<Router>
+			<Switch>
+				<Route exact path="/">
+					<Login />
+				</Route>
+				<Route exact path="/result">
+					<Result />
+				</Route>
+				<Route exact path="/register"></Route>
+				<Route exact path="/home"></Route>
+			</Switch>
+		</Router>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
