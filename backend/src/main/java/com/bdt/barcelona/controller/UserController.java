@@ -19,6 +19,27 @@ public class UserController {
     return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
   }
 
+  @PostMapping("/login")
+  public ResponseEntity<User> login(@RequestBody User user){
+    if(userService.login(user)){
+      return new ResponseEntity<>(HttpStatus.OK);
+    } else{
+      return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    }
+  }
+
+  @PutMapping("/{id}")
+  public ResponseEntity<?> updateUserById(
+    @RequestBody User user,
+    @PathVariable("id") String userId
+  ){
+    if(userService.update(user, userId)){
+      return new ResponseEntity(HttpStatus.OK);
+    } else{
+      return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+  }
+
   @GetMapping("/{id}")
   public ResponseEntity<User> getUserById(@PathVariable("id") String userId){
     return userService.getUserById(userId)
@@ -35,15 +56,4 @@ public class UserController {
     }
   }
 
-  @PutMapping("/{id}")
-  public ResponseEntity<Void> updateUserById(
-    @RequestBody User user,
-    @PathVariable("id") String userId
-  ){
-    if(userService.update(user, userId)){
-      return new ResponseEntity<>(HttpStatus.OK);
-    } else{
-      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    }
-  }
 }
