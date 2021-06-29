@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>barcelona</name>
-<<<<<<< HEAD
-	<comment>Project backend created by Buildship.</comment>
-=======
 	<comment></comment>
->>>>>>> branch 'backend_dev' of https://github.com/Jocalu/mwc-final-hackaton.git
 	<projects>
 	</projects>
 	<buildSpec>
@@ -16,11 +12,6 @@
 		</buildCommand>
 		<buildCommand>
 			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.springframework.ide.eclipse.boot.validation.springbootbuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
