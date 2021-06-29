@@ -34,7 +34,7 @@ function Login() {
 
   return (
     <main className="login">
-      <div className="login__wrapper shadow br ml-8">
+      <div className="login__wrapper shadow br">
         <h1 className="mb-8">Login</h1>
 
         <TextField
