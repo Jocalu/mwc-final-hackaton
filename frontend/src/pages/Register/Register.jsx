@@ -32,17 +32,17 @@ function Register() {
   return (
     <main className="login">
       <div className="login__wrapper container">
-        <h1 className="mb-8">Register</h1>
+        <h1 className="mb-8">Regístrate aquí</h1>
 
         <TextField
           id="outlined-basic"
-          label="Username"
+          label="Nombre de usuario"
           variant="outlined"
-          helperText="Incorrect entry."
+          helperText="Error"
         />
         <br />
         <FormControl variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">Contraseña</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={values.showPassword ? 'text' : 'password'}
