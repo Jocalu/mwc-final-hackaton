@@ -8,4 +8,9 @@
   color: #bdbdbd;
   outline: none;
   transition: border 0.24s ease-in-out;
+
+  &--green {
+    border: 2px dashed color("green");
+    background-color: color("green-light");
+  }
 }
