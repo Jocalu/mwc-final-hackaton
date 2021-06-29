@@ -38,7 +38,6 @@ function Register() {
           id="outlined-basic"
           label="Nombre de usuario"
           variant="outlined"
-          helperText="Error"
         />
         <br />
         <FormControl variant="outlined">

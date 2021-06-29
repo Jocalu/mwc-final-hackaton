@@ -7,6 +7,7 @@ function Home() {
 
   return (
     <main className="home container">
+      <h1 className="mb-6">Arrastra tu fichero</h1>
       <DragAndDrop></DragAndDrop>
       <br />
       <br />

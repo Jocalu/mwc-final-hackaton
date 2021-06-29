@@ -65,6 +65,7 @@ export default function Result() {
 	return (
 		<div className="result">
 			<div className="result__wrapper container">
+				<h1 className="title--center mb-6">Tus resultados</h1>
 				<Score result={resultMocked} />
 				{series && displayGraph()}
 
