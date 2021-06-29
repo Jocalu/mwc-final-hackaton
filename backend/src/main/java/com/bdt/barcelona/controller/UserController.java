@@ -50,9 +50,10 @@ public class UserController {
   @DeleteMapping("/{id}")
   public ResponseEntity<Void> deleteUserById(@PathVariable("id") String userId){
     if(userService.deleteUserById(userId)){
+
       return new ResponseEntity<>(HttpStatus.OK);
     } else{
-      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+      return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
     }
   }
 
