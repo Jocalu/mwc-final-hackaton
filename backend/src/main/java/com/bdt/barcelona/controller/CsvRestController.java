@@ -25,13 +25,10 @@ public class CsvRestController {
 	 */
 	
 	@PostMapping("/computeECM")
-	//public double computeECM(@RequestBody Map<String, Object> json) throws FileNotFoundException {
-	public double computeECM(@RequestBody Map<String, Double[]> json) throws FileNotFoundException {
+	public String computeECM(@RequestBody Map<String, Double[]> json) throws FileNotFoundException {
 		Double[] predictedData = json.get("data");
-		
-		System.out.println(predictedData[0] + ", " + predictedData[1] + ", " + predictedData[2] + ", ");
-		
-		return csvService.computeECM(predictedData);
+				
+		return csvService.computeECM(predictedData).toString();
 	}
 	
 }
