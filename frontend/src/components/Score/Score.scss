@@ -1,1 +1,8 @@
 @import "../../assets/scss/utils.scss";
+
+.score_container{
+    align-self: center;    
+    border: 1px solid color("grey");
+    color: color("grey");
+    font-size: rem(35px);
+}

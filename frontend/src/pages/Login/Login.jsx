@@ -12,12 +12,16 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import { useHistory } from "react-router-dom";
-
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Slide from '@material-ui/core/Slide';
 
 function Login() {
   const {loginValues, setLoginValues, validateForm, login} = useContext(UserContext);
   const history = useHistory();
-
 
   const handleChange = (prop) => (event) => {
     setLoginValues({ ...loginValues, [prop]: event.target.value });

@@ -2,7 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import ApexChart from 'react-apexcharts';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import "./Result.scss";
+import './Result.scss';
+import Score from '../../components/Score/Score';
+import mockPred from './../../data/predictions_test.json';
 
 const options = {
 	chart: {
@@ -16,26 +18,36 @@ const options = {
 		curve: 'smooth',
 	},
 	xaxis: {
-		type: 'numeric',
-		min: 1,
-		max: 7,
-		tickAmount: 7,
+		type: 'category',
+		categories: [" "],
+	},
+	yaxis: {
+		min: 0,
+		decimalsInFloat: 2,
 	},
 	tooltip: {},
 };
 
 const dataMocked = [
 	{
-		name: 'series1',
-		data: [31, 40, 28, 51, 42, 109, 100],
+		name: 'Predicciones',
+		data: omitData(mockPred.data),
 	},
 	{
-		name: 'series2',
-		data: [11, 32, 45, 32, 34, 52, 41],
+		name: 'Valores reales',
+		data: omitData(getData()),
 	},
 ];
 
-const resultMocked = 0.25;
+function getData() {
+	return mockPred.data.map(el => el * Math.random())
+}
+
+function omitData(data) {
+	return data.filter((el,i) => i%6 === 0)
+}
+
+const resultMocked = 0.254;
 
 export default function Result() {
 	//const [data, result] = useContext(Context);
@@ -43,6 +55,7 @@ export default function Result() {
 
 	useEffect(() => {
 		setSeries(dataMocked);
+		getData()
 	}, []);
 
 	const displayGraph = () => {
@@ -50,13 +63,18 @@ export default function Result() {
 	};
 
 	return (
-		<div>
-			{series && displayGraph()}
-			<Link to="/">
-				<Button variant="contained" color="primary">
-					Volver
-				</Button>
-			</Link>
+		<div className="result">
+			<div className="result__wrapper container">
+				<h1 className="title--center mb-6">Tus resultados</h1>
+				<Score result={resultMocked} />
+				{series && displayGraph()}
+
+				<Link to="/">
+					<Button variant="contained" color="primary">
+						Volver
+					</Button>
+				</Link>
+			</div>
 		</div>
 	);
 }

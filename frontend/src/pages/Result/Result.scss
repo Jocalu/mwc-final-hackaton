@@ -1,2 +1,23 @@
 @import "../../assets/scss/utils.scss";
 
+.result {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: color("white");
+    width: 100%;
+    height: 100vh;
+    padding: rem(30px);
+
+    a {
+      align-self: center;
+    }
+
+    @include from-tablet {
+      width: rem(1200px);
+      margin-left: rem(100px);
+      margin-top: rem(100px);
+      height: max-content;
+    }
+  }
+}
