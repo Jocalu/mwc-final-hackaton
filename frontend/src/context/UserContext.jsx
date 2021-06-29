@@ -7,38 +7,35 @@ export const UserContext = createContext();
 const UserProvider = (props) => {
 
     const [loginValues, setLoginValues] = useState({
-        username: '',
+        email: '',
         password: '',
         showPassword: false,
     });
-    const [registerValues, setRegisterValues] = useState({  /* TODO: lo hacemos por separado para en un futuro añadir repeat password y demás. */
+    const [registerValues, setRegisterValues] = useState({
         username: '',
+        email: '',
         password: '',
         showPassword: false,
     });
 
     const validateForm = () => {
-        return (loginValues.username != '' && loginValues.password != '');
+        return (loginValues.email != '' && loginValues.password != '');
     }
-    const validateRegisterForm = () => {    /* TODO: lo hacemos por separado para en un futuro añadir repeat password y demás. */
-        return (registerValues.username != '' && registerValues.password != '');
+    const validateRegisterForm = () => { 
+        return (registerValues.username != '' && registerValues.email != '' && registerValues.password != '');
     }
 
-    const login = () => {
+    const login = async() => {
         //si todo es OK, redirect a home
+        const api = await fetch("");
+		const result = await api.json();
+		setCountries(result);
         
     }
     const register = () => {
         //si todo es OK, redirect a home
         
     }
-    
-
-	/*const getCountries = async () => {
-		const api = await fetch("https://restcountries.eu/rest/v2/all?fields=name");
-		const result = await api.json();
-		setCountries(result);
-	}*/
 
 	return(
 	<UserContext.Provider

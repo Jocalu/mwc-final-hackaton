@@ -52,10 +52,10 @@ function Login() {
 
         <TextField
           id="outlined-basic"
-          label="Nombre de usuario"
+          label="Email"
           variant="outlined"
           helperText=""
-          onChange={handleChange('username')}
+          onChange={handleChange('email')}
         />
         <br />
         <FormControl variant="outlined">
