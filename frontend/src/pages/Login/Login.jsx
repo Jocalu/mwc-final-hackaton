@@ -53,7 +53,6 @@ function Login() {
           id="outlined-basic"
           label="Email"
           variant="outlined"
-          helperText=""
           onChange={handleChange('email')}
         />
         <br />
