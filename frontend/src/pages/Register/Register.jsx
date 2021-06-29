@@ -4,30 +4,39 @@ import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
+import { useHistory } from "react-router-dom";
 
 function Register() {
-  const [values, setValues] = useState({
-    password: '',
-    showPassword: false,
-  });
+  const {registerValues, setRegisterValues, validateRegisterForm, register} = useContext(UserContext);
+  const history = useHistory();
 
   const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
+    setRegisterValues({ ...registerValues, [prop]: event.target.value });
   };
 
   const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
+    setRegisterValues({ ...registerValues, showPassword: !registerValues.showPassword });
   };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    (validateRegisterForm() && register()) ? history.push("/home") : showError(); //si es OK, redirect a la home de la app, sino, mostramos error
+  }
+
+  const showError = () => {
+    alert('Datos incorrectos');
+  }
 
   return (
     <main className="login">
@@ -44,8 +53,8 @@ function Register() {
           <InputLabel htmlFor="outlined-adornment-password">Contraseña</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
-            type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
+            type={registerValues.showPassword ? 'text' : 'password'}
+            value={registerValues.password}
             onChange={handleChange('password')}
             endAdornment={(
               <InputAdornment position="end">
@@ -55,7 +64,7 @@ function Register() {
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  {registerValues.showPassword ? <Visibility /> : <VisibilityOff />}
                 </IconButton>
               </InputAdornment>
             )}
@@ -64,11 +73,9 @@ function Register() {
         </FormControl>
         <br />
         <br />
-        <Link  to="/home">
-          <Button variant="contained" color="primary" size="large">    
-            REGISTRAR
-          </Button>
-        </Link>
+        <Button variant="contained" color="primary" size="large" onClick={handleSubmit}>    
+          REGISTRAR
+        </Button>
 
       </div>
     </main>
