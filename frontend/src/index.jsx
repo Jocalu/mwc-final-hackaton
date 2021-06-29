@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './assets/scss/styles.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 import Login from './pages/Login/Login';
 import Result from './pages/Result/Result';
 import FilesProvider from './context/FilesContext'
