@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './assets/scss/styles.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -8,6 +9,7 @@ import Result from './pages/Result/Result';
 
 ReactDOM.render(
 	<React.StrictMode>
+       <FilesProvider>
 		<Router>
 			<Switch>
 				<Route exact path="/">
@@ -20,6 +22,7 @@ ReactDOM.render(
 				<Route exact path="/home"></Route>
 			</Switch>
 		</Router>
+    </FilesProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
 );
