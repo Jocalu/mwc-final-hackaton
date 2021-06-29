@@ -30,7 +30,7 @@ npm run start
 
 ### Client
 Verb | Endpoint | Result
------------- | ------------- | -------------
+----- | ------------- | -------------
 GET | "/" | Home page with login screen
 GET | "/register | User register screen
 GET | "/home" | drag & drop screen
@@ -38,7 +38,7 @@ GET | "/result" | MSE Output result screen
 
 ### API
 Verb | Endpoint | body | Result
------------- | ------------- | -------------
+------------ | ------------- | -------------  | ------------- 
 POST | "/api/v1/register" | { username, email, password } | Register user route
 POST | "/api/v1/login" | { username, email, password } | Login user route
 PUT | "/api/v1/update" | { username, email, password } | Update user route
