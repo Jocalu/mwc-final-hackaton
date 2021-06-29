@@ -25,12 +25,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(validateForm()){
-      login();
-      history.push("/home");
-    }else{
-      showError();
-    }
+    (validateForm() && login()) ? history.push("/home") : showError(); //si es OK, redirect a la home de la app, sino, mostramos error
   }
 
   const handleClickShowPassword = () => {
