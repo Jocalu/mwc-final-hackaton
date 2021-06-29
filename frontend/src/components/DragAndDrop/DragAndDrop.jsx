@@ -1,7 +1,7 @@
 import React, {useCallback, useContext, useEffect} from 'react'
 import {useDropzone} from 'react-dropzone'
 import { FilesContext } from '../../context/FilesContext';
-import './DragAndDrop.css'
+import './DragAndDrop.scss'
 
 function DragAndDrop() {
 
