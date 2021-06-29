@@ -19,6 +19,15 @@ public class UserController {
     return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
   }
 
+  @PostMapping("/login")
+  public ResponseEntity<User> login(@RequestBody User user){
+    if(userService.login(user)){
+      return new ResponseEntity<>(HttpStatus.OK);
+    } else{
+      return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    }
+  }
+
   @GetMapping("/{id}")
   @ResponseBody
   public ResponseEntity<User> getUserById(@PathVariable("id") String userId){
