@@ -1,4 +1,4 @@
-# TailorChallenge
+# BDT Hackaton - MWC21
 BDT Hackathon fullstack chellenge in which you are asked to create a functional SPA where an user can drop a csv/json file with predictions and it calculates the MSE (Mean Squared Error).
 
 Built with ```ReactJS```, styled with ```BEM``` methodology, and deployed in ```Vercel```.
