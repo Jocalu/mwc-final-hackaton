@@ -9,9 +9,6 @@ function Home() {
     <main className="home container">
       <h1 className="mb-6">Calcula tu desviación</h1>
       <DragAndDrop></DragAndDrop>
-      <br />
-      <br />
-      
     </main>
   );
 }
