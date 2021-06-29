@@ -21,8 +21,8 @@ function DragAndDrop() {
         <div {...getRootProps()} className="dragAndDrop">
         <input {...getInputProps()} onChange={handleChange}/>
         {isDragActive
-            ? <p>Drop the files here ...</p>
-            : <p>Drag 'n' drop some files here, or click to select files</p>
+            ? <p>Arrastra aquí el archivo ...</p>
+            : <p>Arrastra aquí el archivo, o navega para seleccionarlo</p>
         }
         </div>
     )
