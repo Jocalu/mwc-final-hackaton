@@ -49,3 +49,15 @@ body {
   cursor: not-allowed;
   pointer-events: auto;
 }
+
+.MuiButton-containedPrimary {
+  width: 100%;
+
+  @include from-tablet {
+    width: rem(200px);
+  }
+}
+
+.title--center {
+  text-align: center;
+}
