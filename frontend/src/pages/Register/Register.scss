@@ -1,0 +1,23 @@
+@import "../../assets/scss/utils";
+
+.register {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: color("white");
+    width: 100vw;
+    height: 100vh;
+    padding: rem(30px);
+
+    @include from-tablet {
+      width: rem(400px);
+      margin-left: rem(200px);
+      margin-top: rem(100px);
+      height: max-content;
+    }
+  }
+
+  &__message {
+    font-size: rem(12px);
+  }
+}
