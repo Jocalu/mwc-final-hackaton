@@ -31,7 +31,7 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    (validateRegisterForm() && register()) ? history.push("/home") : showError(); //si es OK, redirect a la home de la app, sino, mostramos error
+    history.push("/home"); //si es OK, redirect a la home de la app, sino, mostramos error
   }
 
   const showError = () => {
@@ -47,6 +47,14 @@ function Register() {
           id="outlined-basic"
           label="Nombre de usuario"
           variant="outlined"
+          onChange={handleChange('username')}
+        />
+        <br />
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          onChange={handleChange('email')}
         />
         <br />
         <FormControl variant="outlined">
