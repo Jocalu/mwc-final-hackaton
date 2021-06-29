@@ -28,6 +28,18 @@ public class UserController {
     }
   }
 
+  @PutMapping("/{id}")
+  public ResponseEntity<?> updateUserById(
+    @RequestBody User user,
+    @PathVariable("id") String userId
+  ){
+    if(userService.update(user, userId)){
+      return new ResponseEntity(HttpStatus.OK);
+    } else{
+      return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+  }
+
   @GetMapping("/{id}")
   @ResponseBody
   public ResponseEntity<User> getUserById(@PathVariable("id") String userId){
@@ -45,15 +57,4 @@ public class UserController {
     }
   }
 
-  @PutMapping("/{id}")
-  public ResponseEntity<?> updateUserById(
-    @RequestBody User user,
-    @PathVariable("id") String userId
-  ){
-    if(userService.update(user, userId)){
-      return new ResponseEntity(HttpStatus.OK);
-    } else{
-      return new ResponseEntity(HttpStatus.NOT_FOUND);
-    }
-  }
 }
