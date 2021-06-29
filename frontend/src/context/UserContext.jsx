@@ -11,12 +11,24 @@ const UserProvider = (props) => {
         password: '',
         showPassword: false,
     });
+    const [registerValues, setRegisterValues] = useState({  /* TODO: lo hacemos por separado para en un futuro añadir repeat password y demás. */
+        username: '',
+        password: '',
+        showPassword: false,
+    });
 
     const validateForm = () => {
         return (loginValues.username != '' && loginValues.password != '');
     }
+    const validateRegisterForm = () => {    /* TODO: lo hacemos por separado para en un futuro añadir repeat password y demás. */
+        return (registerValues.username != '' && registerValues.password != '');
+    }
 
     const login = () => {
+        //si todo es OK, redirect a home
+        
+    }
+    const register = () => {
         //si todo es OK, redirect a home
         
     }
@@ -33,8 +45,11 @@ const UserProvider = (props) => {
 		value={{
 			loginValues,
 			setLoginValues,
+            registerValues,
+			setRegisterValues,
             validateForm,
-            login
+            login,
+            register
 		}}
 	>
 		{props.children}
