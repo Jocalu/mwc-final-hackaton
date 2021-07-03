@@ -31,12 +31,10 @@ function DragAndDrop() {
         : 
         <div {...getRootProps()} className="dragAndDrop ">
         <input {...getInputProps()} onChange={handleChange}/>
-        
              <p>Arrastra aquí el archivo, o navega para seleccionarlo</p>
-       
         </div>} 
         </>
-        )
+    )
 }
 
 export default DragAndDrop
