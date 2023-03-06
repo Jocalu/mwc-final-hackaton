@@ -1,6 +1,8 @@
 # BDT Hackaton - MWC21
 BDT Hackathon fullstack chellenge in which you are asked to create a functional SPA where an user can drop a csv/json file with predictions and it calculates the MSE (Mean Squared Error).
 
+This is a repository made together with 2 more participants in less than 8 hours
+
 Built with ```ReactJS```, styled with ```BEM``` methodology, and deployed in ```Vercel```.
 
 ## How it looks
