@@ -7,7 +7,7 @@ Built with ```ReactJS```, styled with ```BEM``` methodology, and deployed in ```
 
 ## How it looks
 
-🔗 [Live Demo](https://mwc-final-hackaton-backend.vercel.app/)
+🔗 [Live Demo](https://mwc-final-hackaton.vercel.app/)
 
 
 ## 1- Download
